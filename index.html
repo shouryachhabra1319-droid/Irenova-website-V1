@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRENOVA | Generative Aerospace</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="arx-scene-wrapper">
+
+        <div class="holo-layer left-col" id="holo-left">
+            <div class="data-stream">01010100<br>SYS_CHK<br>ORBITAL<br>101010<br>VELOCITY<br>MACH_3<br>...</div>
+            <div class="reticle-target"></div>
+        </div>
+
+        <div class="holo-layer right-col" id="holo-right">
+            <div class="radar-circle"></div>
+            <div class="orbital-ring"></div>
+            <div class="data-block">LAT: 34.05<br>LON: 118.24<br>SAT_LOCK: <span id="sat-val">12</span></div>
+        </div>
+
+        <div class="arx-wrapper">
+
+            <div class="custom-header-wrapper">
+                <div class="custom-logo">IRENOVA</div>
+                <div class="custom-motto">We Give Gravity A Challenge</div>
+            </div>
+
+            <div class="arx-hero">
+                <div class="hero-content">
+                    <div class="brand-tag">GEN_AI V.1.0</div>
+                    <h1>Flight Ready.<br>In Seconds,<br>Not Semesters.</h1>
+                    <p class="subtext">The world's first <strong>Generative Aerospace Engine</strong> for university rocketry. Slash design cycles by 90% and automate manual simulation.</p>
+                    <div class="cta-row">
+                        <a href="#release-footer" class="btn-primary">DEPLOY A.R.X</a>
+                        <a href="https://google.com" target="_blank" class="btn-secondary">VIEW DOCS</a>
+                    </div>
+                </div>
+
+                <div class="arx-panel" id="telemetry-panel">
+                    <div class="panel-header"><span class="blink-status"></span> LIVE_TELEMETRY</div>
+                    <div class="panel-row"><span class="label">MODEL</span><span class="value">L-CLASS SOLID</span></div>
+                    
+                    <div class="panel-row">
+                        <span class="label">APOGEE (EST)</span>
+                        <span class="value active" id="live-apogee">12,450 FT</span>
+                    </div>
+                    <div class="panel-row">
+                        <span class="label">STABILITY</span>
+                        <span class="value" id="live-stability">2.40 CAL</span>
+                    </div>
+                    
+                    <div class="panel-graph">
+                        <div class="graph-bar anim-bar-1"></div>
+                        <div class="graph-bar anim-bar-2"></div>
+                        <div class="graph-bar anim-bar-3"></div>
+                        <div class="graph-bar anim-bar-4"></div>
+                        <div class="graph-bar anim-bar-5"></div>
+                        <div class="graph-bar anim-bar-6"></div>
+                    </div>
+                    
+                    <div class="terminal-line typing-effect" id="terminal-text">> System Initialized...</div>
+                </div>
+            </div>
+
+            <div class="arx-stats-bar">
+                <div class="stat-item"><h3>90%</h3><p>LESS MANUAL CALC</p></div>
+                <div class="stat-item"><h3>10x</h3><p>ITERATION SPEED</p></div>
+                <div class="stat-item"><h3>ZERO</h3><p>GUESSWORK</p></div>
+            </div>
+
+            <div class="arx-grid-section">
+                <div class="grid-container">
+                    <div class="arx-card hover-glow"><div class="card-icon">⊕</div><h3>Generative Design</h3><p>Input target apogee. A.R.X generates optimal airframe geometry.</p></div>
+                    <div class="arx-card hover-glow"><div class="card-icon">∿</div><h3>Auto-Simulation</h3><p>We run 1,000 flight sims in parallel to validate stability.</p></div>
+                    <div class="arx-card hover-glow"><div class="card-icon">▧</div><h3>Export Ready</h3><p>One-click export to OpenRocket (.ork) and RASAero.</p></div>
+                </div>
+            </div>
+
+            <div class="arx-stack">
+                <p>INTEGRATES WITH:</p>
+                <div class="stack-tags">
+                    <span>[ OPENROCKET ]</span><span>[ RASAERO ]</span><span>[ MATLAB ]</span><span>[ PYTHON ]</span>
+                    <span class="tag-wip">[ SOLIDWORKS // V2.0 ]</span><span class="tag-wip">[ ANSYS // V2.0 ]</span>
+                </div>
+            </div>
+
+            <div id="release-footer" class="arx-release-footer">
+                <div class="release-tag">MISSION STATUS: T-MINUS</div>
+                <h2>A.R.X. RELEASING SOON</h2>
+                
+                <div id="countdown" class="countdown-grid">
+                    <div class="time-block"><span id="weeks">00</span><span class="label">WKS</span></div>
+                    <div class="time-block"><span id="days">00</span><span class="label">DAYS</span></div>
+                    <div class="time-block"><span id="hours">00</span><span class="label">HRS</span></div>
+                    <div class="time-block"><span id="minutes">00</span><span class="label">MIN</span></div>
+                    <div class="time-block"><span id="seconds">00</span><span class="label">SEC</span></div>
+                </div>
+
+                <div id="contact-module" style="height: 80px;">
+                    
+                    <button id="contact-trigger" class="btn-primary contact-btn" onclick="openComms()">
+                        [ CONTACT MISSION CONTROL ]
+                    </button>
+                    
+                    <div id="contact-input" class="fake-form" style="display: none; max-width: 450px; margin: 0 auto;">
+                        <input type="email" class="input-line" placeholder="ENTER FREQUENCY (EMAIL)_" 
+                               style="background: transparent; border: none; color: #fff; width: 100%; outline: none; font-family: 'JetBrains Mono', monospace;">
+                        <div class="submit-btn" onclick="transmitData()">[ TRANSMIT ]</div>
+                    </div>
+
+                    <div id="contact-success" style="display: none; margin-top: 20px; font-family: 'JetBrains Mono', monospace; color: #00D4BD; letter-spacing: 2px;">
+                        >> TRANSMISSION RECEIVED. STAND BY.
+                    </div>
+
+                </div>
+            </div>
+
+        </div> </div> <script src="script.js"></script>
+</body>
+</html>
